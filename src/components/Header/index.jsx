@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import NewTaskForm from "../NewTaskForm";
 
 const Header = () => {
-    return (
-        <>
-        <h1>ToDo</h1>
-        </>
-    );
-}
+  return (
+    <header>
+      <h1>ToDo</h1>
+      <NewTaskForm />
+    </header>
+  );
+};
 
 export default Header;
