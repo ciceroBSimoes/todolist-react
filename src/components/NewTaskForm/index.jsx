@@ -27,14 +27,20 @@ const NewTaskForm = () => {
   };
 
   return (
-    <>
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Descreva a tarefa..." required />
-        <button type="submit">Salvar</button>
-        <input type="color" id="colorPicker" defaultValue="#FFFFFF" />
+        <div>
+          <input type="text" placeholder="Descreva a tarefa..." required />
+        </div>
+        <div>
+          <input type="submit" value="Salvar" />
+          <input type="color" id="colorPicker" defaultValue="#FEF596" />
+        </div>
       </form>
-      <button onClick={wipeTasks}>Limpar Tarefas</button>
-    </>
+      <button onClick={wipeTasks} className="wipe-button">
+        Limpar Tarefas
+      </button>
+    </div>
   );
 };
 

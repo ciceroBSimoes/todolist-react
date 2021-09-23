@@ -23,30 +23,27 @@ const TaskList = () => {
   }, [isUpdated]);
 
   return (
-    <>
-      <div>
+    <div className="tasks-container">
+      <div className="list-header">
         <h2>Pendente</h2>
-        <h3>{pendantTasks.length} Tarefas</h3>
-        <ul>
-          {pendantTasks.map((item) => (
-            <li key={item.id}>
-              <TaskCard task={item} />
-            </li>
-          ))}
-        </ul>
+        <h3>{pendantTasks.length}{pendantTasks.length === 1 ? " Tarefa" : " Tarefas"}</h3>
       </div>
-      <div>
+      <div className="list-container">
+        {pendantTasks.map((item) => (
+          <TaskCard task={item} key={item.id} />
+        ))}
+      </div>
+
+      <div className="list-header">
         <h2>Concluídos</h2>
-        <h3>{doneTasks.length} Tarefas</h3>
-        <ul>
-          {doneTasks.map((item) => (
-            <li key={item.id}>
-              <TaskCard task={item} />
-            </li>
-          ))}
-        </ul>
+        <h3>{doneTasks.length}{doneTasks.length === 1 ? " Tarefa" : " Tarefas"}</h3>
       </div>
-    </>
+      <div className="list-container">
+        {doneTasks.map((item) => (
+          <TaskCard task={item} key={item.id} />
+        ))}
+      </div>
+    </div>
   );
 };
 

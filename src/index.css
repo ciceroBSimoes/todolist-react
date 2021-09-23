@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@400;500;600&display=swap");
+/* font-family: 'Indie Flower', cursive; */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+}
+header {
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}
+.form-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px;
+  margin-top: 10px;
+}
+form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+form div {
+  display: flex;
+  justify-content: space-evenly;
+}
+form input[type="submit"] {
+  width: 80%;
+  height: 36px;
+  font-size: 1.1rem;
+  background-color: #347f4e;
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+}
+form input[type="color"] {
+  width: 20%;
+  height: auto;
+  cursor: pointer;
+}
+form input[type="text"] {
+  width: 100%;
+  height: 40px;
+  padding: 0.5rem;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+}
+.wipe-button {
+  height: 36px;
+  align-self: flex-end;
+  background-color: #b22222;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 4px;
+  cursor: pointer;
+}
+.tasks-container {
+  width: 70%;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 1px 10px;
+  align-items: baseline;
+  border-bottom: 2px black dashed;
+  border-bottom-width: thick;
+}
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.task-card {
+  display: flex;
+  transform: rotate(3deg);
+  width: 220px;
+  height: 220px;
+  margin: 10px 10px;
+  padding: 10px;
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.15s linear;
+}
+.task-card span {
+  font-family: "Indie Flower", cursive;
+  font-size: 28px;
+  text-align: center;
+  margin: auto;
+  pointer-events: none;
+}
+.task-card:hover {
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
+  position: relative;
+  z-index: 5;
+}
+.pin {
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.55);
+  background-image: radial-gradient(red 50%, black 100%);
+}
