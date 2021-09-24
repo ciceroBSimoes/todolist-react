@@ -35,7 +35,7 @@ const TaskList = () => {
       </div>
 
       <div className="list-header">
-        <h2>Concluídos</h2>
+        <h2>Feito</h2>
         <h3>{doneTasks.length}{doneTasks.length === 1 ? " Tarefa" : " Tarefas"}</h3>
       </div>
       <div className="list-container">
