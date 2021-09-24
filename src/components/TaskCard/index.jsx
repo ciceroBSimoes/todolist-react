@@ -11,6 +11,16 @@ const TaskCard = ({ task }) => {
     localStorage.setItem("tasks", JSON.stringify(taskList));
     setIsUpdated(false);
   };
+  const removeTask = (id) => {
+    if (window.confirm("Remover esta tarefa?")) {
+      const tasksList = JSON.parse(localStorage.getItem("tasks"));
+      tasksList.list = tasksList.list.filter((item) => item.id !== id);
+      tasksList.list.length === 0
+        ? localStorage.clear()
+        : localStorage.setItem("tasks", JSON.stringify(tasksList));
+      setIsUpdated(false);
+    }
+  };
 
   const setTextColor = () => {
     let corHex = task.color.replace("#", "");
@@ -36,7 +46,7 @@ const TaskCard = ({ task }) => {
       }}
       onDoubleClick={handleDbClick}
     >
-      <div className="pin"></div>
+      <p onClick={() => removeTask(task.id)}>&#10007;</p>
       <span>{task.text}</span>
     </div>
   );

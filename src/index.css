@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@400;500;600&display=swap");
-/* font-family: 'Indie Flower', cursive; */
+
+@font-face {
+  font-family: Rudiment;
+  src: url("./assets//Rudiment-0gwP.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   box-sizing: border-box;
@@ -8,18 +14,25 @@
   font-family: "Poppins", sans-serif;
 }
 body {
+  background-image: url("./assets//background-2.jpg");
+  background-repeat: repeat;
+  background-size: cover;
 }
 header {
   width: 70%;
   margin: 0 auto;
   padding: 10px;
   text-align: center;
+  color: white;
+  font-size: 2rem;
 }
 .form-container {
   display: flex;
   justify-content: flex-end;
-  padding: 0 20px;
+  padding: 20px;
   margin-top: 10px;
+  border: 6px white dashed;
+  border-radius: 10px;
 }
 form {
   width: 400px;
@@ -71,17 +84,29 @@ form input[type="text"] {
   border-radius: 8px;
 }
 .list-header {
+  color: white;
   display: flex;
   justify-content: space-between;
   padding: 10px 10px 1px 10px;
   align-items: baseline;
-  border-bottom: 2px black dashed;
+  border-bottom: 2px white dashed;
   border-bottom-width: thick;
+}
+.list-header h2 {
+  font-family: Rudiment;
+  font-size: 4rem;
+  letter-spacing: 5px;
+}
+.list-header h3 {
+  font-family: Rudiment;
+  font-size: 2rem;
+  letter-spacing: 5px;
 }
 .list-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  min-height: 300px;
 }
 .task-card {
   display: flex;
@@ -92,6 +117,40 @@ form input[type="text"] {
   padding: 10px;
   box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.5);
   transition: transform 0.15s linear;
+}
+.task-card:nth-child(even) {
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+}
+.task-card:nth-child(3n) {
+  -webkit-transform: none;
+  -moz-transform: none;
+  position: relative;
+  top: -5px;
+}
+.task-card:nth-child(5n) {
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  position: relative;
+  right: 5px;
+}
+.task-card:nth-child(8n) {
+  position: relative;
+  top: 8px;
+  right: 5px;
+}
+.task-card:nth-child(11n) {
+  position: relative;
+  top: 3px;
+  left: -5px;
+}
+.task-card p {
+  position: absolute;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 3;
+  top: 5px;
+  right: 5px;
 }
 .task-card span {
   font-family: "Indie Flower", cursive;
@@ -105,12 +164,4 @@ form input[type="text"] {
   transform: scale(1.25);
   position: relative;
   z-index: 5;
-}
-.pin {
-  position: absolute;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.55);
-  background-image: radial-gradient(red 50%, black 100%);
 }
